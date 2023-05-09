@@ -16,8 +16,8 @@ def print_req_logs(nginx_collection):
         requests_num = list(nginx_collection.find({'method' : method}))
         print('\tmethod {}: {}'.format(method, len(requests_num)))
         '''access to status path'''
-        status_get = list(nginx_collection.find({'method' : 'GET', 'path': '/status'}))
-        print('{} status check'.format(len(status_get)))
+    status_get = list(nginx_collection.find({'method' : 'GET', 'path': '/status'}))
+    print('{} status check'.format(len(status_get)))
 
 
 
