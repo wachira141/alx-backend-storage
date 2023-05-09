@@ -15,13 +15,13 @@ def print_req_logs(nginx_collection):
     for method in methods:
         requests_num = list(nginx_collection.find({'method' : method}))
         print('\tmethod {}: {}'.format(method, len(requests_num)))
-        #check req to path /status with method GET
+        '''access to status path'''
         status_get = list(nginx_collection.find({'method' : 'GET', 'path': '/status'}))
         print('{} status check'.format(len(status_get)))
 
 
 
-def main:
+def main():
     """
     main func to run the program to count logs
     """
