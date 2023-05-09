@@ -9,8 +9,8 @@ def print_req_logs(nginx_collection):
     """
     print Nginx request logs
     """
-    print(f'{nginx_collection.count_documents({})} logs')
-    print("Methods")
+    print('{} logs'.format(nginx_collection.count_documents({})))
+    print("Methods:")
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
     for method in methods:
         requests_num = list(nginx_collection.find({'method' : method}))
@@ -27,3 +27,6 @@ def main:
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     print_req_logs(client.logs.nginx)
+
+if __name__ == '__main__':
+    main()
